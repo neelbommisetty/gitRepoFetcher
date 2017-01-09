@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log*
+.npm
+
+# build folder
+build/
+
+yarn-error.log*

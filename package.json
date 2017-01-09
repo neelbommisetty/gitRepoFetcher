@@ -12,22 +12,47 @@
   },
   "author": "Neel Bommisetty",
   "eslintConfig": {
-    "extends": [
-      "airbnb-base",
-      "angular"
-    ],
+    "extends": "airbnb-base",
     "env": {
       "es6": true,
       "browser": true,
       "jasmine": true,
       "node": true
+    },
+    "plugins": [
+      "angular"
+    ],
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "import/no-unresolved": 1,
+      "global-require": 0,
+      "prefer-template": 1,
+      "max-len": [
+        "error",
+        120
+      ],
+      "no-use-before-define": 0,
+      "new-cap": 0,
+      "no-param-reassign": 1,
+      "no-nested-ternary": 1,
+      "import/no-extraneous-dependencies": 0
+    },
+    "globals": {
+      "angular": true
     }
   },
   "license": "MIT",
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-sanitize": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
     "extract-text-webpack-plugin": "^1.0.1",
+    "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.24.1",
+    "markdown-it": "^8.2.2",
     "sass": "^0.5.0",
     "webpack": "^1.13.3"
   },

@@ -52,14 +52,13 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: ['ng-annotate', 'babel'],
-        exclude: 'node_modules',
         include: path.join(__dirname, 'src/'),
       },
       // CSS
       {
         test: /\.s[c|a]ss$/,
         include: path.join(__dirname, 'src/'),
-        loader: 'style-loader!css-loader',
+        loader: 'style-loader!css-loader!sass-loader',
       },
       {
         // Do not transform vendor's CSS with CSS-modules
@@ -71,13 +70,18 @@ module.exports = {
         include: /node_modules/,
         loaders: ['style-loader', 'css-loader'],
       }, {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader',
-      }, {
         test: /\.(jpg|png|gif)$/,
         loaders: [
           'file-loader',
-          'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
+          `image-webpack?{
+            progressive:true,
+            optimizationLevel: 7,
+            interlaced: false,
+            pngquant:{
+                quality: "65-90",
+                speed: 4
+              }
+            }`,
         ],
       }, {
         test: /\.html$/,
@@ -88,6 +92,28 @@ module.exports = {
       }, {
         test: /\.(mp4|webm)$/,
         loader: 'url-loader?limit=10000',
+      },
+
+      // font awesome
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+|\?.*)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff',
+      },
+      {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+|\?.*)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff',
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+|\?.*)?$/,
+        loader: 'url?limit=10000&mimetype=application/octet-stream',
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+|\?.*)?$/,
+        loader: 'file',
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+|\?.*)?$/,
+        loader: 'url?limit=10000&mimetype=image/svg+xml',
       },
     ],
   },

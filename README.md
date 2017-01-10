@@ -5,10 +5,12 @@ This application fetches public repositories of any user on github.com.
 * angular - framework used to build this application
 * angular - ui-router - used for routing
 * sass - css preprocessor
+* markdown-it  - to render markdown as html
 * webpack - for build system
 * webpack-dev-server - for development server
 * express - for production server
 * yarn - package manager
+
 
 # Usage
 ```

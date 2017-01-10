@@ -30,4 +30,4 @@ To start production server
 ```
 
 # Limitations
-If user has more than 30 repositories . It fetches on top 30 in alphabetical order
+If user has more than 30 repositories . It fetches only top 30 in alphabetical order

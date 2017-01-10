@@ -1,7 +1,7 @@
 {
   "name": "git-repo-fetcher",
   "version": "1.0.0",
-  "description": "Fetched git repos and readme's of any username",
+  "description": "Fetches git repos and their readme's of any github user",
   "engines": {
     "node": ">=6.0.0"
   },

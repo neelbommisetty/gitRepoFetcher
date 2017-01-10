@@ -1,1 +1,5 @@
-<p>{{home.greeting}}</p><a ui-sref="repos({username:'neelbommisetty'})"> repos </a>
+<form ng-submit="home.getRepos($event)">
+  <label for="username">Github Username</label>
+  <input type="text" placeholder="neelbommisetty" id="username" ng-model="home.username">
+  <input type="submit" value="Get Repos !">
+</form>

@@ -14,7 +14,7 @@ export default function routes($stateProvider) {
   };
   const userRepos = {
     name: 'repos',
-    url: '/:username/repos',
+    url: '/:username',
     views: {
       Root: {
         template: require('./repos.html'),
@@ -23,9 +23,21 @@ export default function routes($stateProvider) {
       },
     },
   };
+  const repoPage = {
+    name: 'repoPage',
+    url: '/:username/:reponame',
+    views: {
+      Root: {
+        template: require('./repoPage.html'),
+        controller: 'repoController',
+        controllerAs: 'repo',
+      },
+    },
+  };
 
 
   $stateProvider
     .state(home)
-    .state(userRepos);
+    .state(userRepos)
+    .state(repoPage);
 }

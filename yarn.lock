@@ -68,9 +68,9 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular, angular@^1.0.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.5.8.tgz#925a5392b8c212d09572dc446db7e01264e094cb"
+angular-animate@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.6.1.tgz#19e3b82b7392e2bbdd83af33c0af0d85437f3a14"
 
 angular-sanitize@^1.6.1:
   version "1.6.1"
@@ -81,6 +81,14 @@ angular-ui-router@^0.3.2:
   resolved "https://registry.yarnpkg.com/angular-ui-router/-/angular-ui-router-0.3.2.tgz#c27e0496309c99218d5655985b164a096ab520a9"
   dependencies:
     angular "^1.0.8"
+
+angular@^1.0.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.5.8.tgz#925a5392b8c212d09572dc446db7e01264e094cb"
+
+angular@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.1.tgz#a7b6d763a74c157325692619e97257e69d9b6a27"
 
 ansi-escapes@^1.1.0:
   version "1.4.0"

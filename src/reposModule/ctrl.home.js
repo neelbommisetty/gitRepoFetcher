@@ -1,5 +1,13 @@
 export default class HomeController {
-  constructor() {
-    this.greeting = 'It works !!!';
+  constructor($state) {
+    this.$state = $state;
+  }
+  getRepos(e) {
+    e.preventDefault();
+    this.$state.go('repos', {
+      username: this.username || '',
+    });
   }
 }
+
+HomeController.$inject = ['$state'];

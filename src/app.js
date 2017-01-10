@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import ngSanitize from 'angular-sanitize';
+import ngAnimate from 'angular-animate';
 
 import 'font-awesome/css/font-awesome.css';
 
@@ -11,6 +12,7 @@ import './app.scss';
 angular.module('app', [
   uirouter,
   ngSanitize,
+  ngAnimate,
   repoModule]).config(($locationProvider) => {
     'ngInject';
 

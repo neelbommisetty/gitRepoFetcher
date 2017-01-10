@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -9,9 +10,9 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: '[name].[chunkhash].js',
+    filename: '[name].[chunkhash].min.js',
     chunkFilename: '[name].[chunkhash].chunk.js',
-    publicPath: path.join(__dirname, 'build'),
+    publicPath: '/build/',
   },
   plugins: [
     new webpack.NoErrorsPlugin(),
@@ -20,6 +21,9 @@ module.exports = {
       children: true,
       minChunks: 2,
       async: true,
+    }),
+    new NgAnnotatePlugin({
+      add: true,
     }),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.DedupePlugin(),
@@ -44,7 +48,10 @@ module.exports = {
       },
       inject: true,
     }),
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin('[name].[contenthash].min.css', {
+      allChunks: false,
+    }),
+    new webpack.PrefetchPlugin('angular'),
   ],
   module: {
     loaders: [
@@ -58,7 +65,7 @@ module.exports = {
       {
         test: /\.s[c|a]ss$/,
         include: path.join(__dirname, 'src/'),
-        loader: 'style-loader!css-loader!sass-loader',
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader'),
       },
       {
         // Do not transform vendor's CSS with CSS-modules

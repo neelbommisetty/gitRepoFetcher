@@ -7,6 +7,11 @@ body {
 
 .rootView {
   transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 100vh;
+  margin: 0 5%;
 }
 
 .rootView.ng-enter, .rootView.ng-leave {
@@ -30,5 +35,6 @@ body {
 }
 
 a,a:visited,a:hover {
-  text-decoration: none;
+  color:black;
+  text-decoration: underline;
 }

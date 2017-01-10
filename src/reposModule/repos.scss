@@ -1,0 +1,32 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  text-align: left;
+  label {
+    margin:5px;
+  }
+  .username-input {
+    margin: 5px;
+    padding:5px 10px;
+  }
+  .submit-btn {
+    margin:5px;
+
+  }
+}
+.header {
+  text-align: center;
+  border-bottom: 1px solid;
+}
+.repos-wrapper {
+  .repo-list {
+    list-style: none;
+    .list-item{
+      padding: 10px;
+    }
+  }
+}
+.repopage-wrapper {
+  margin:10px;
+}

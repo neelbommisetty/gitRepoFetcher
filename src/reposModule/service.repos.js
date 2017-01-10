@@ -1,9 +1,15 @@
+
 import markdownIt from 'markdown-it';
+
 
 export default class RepoService {
   constructor($http) {
     this.http = $http;
-    this.markdownParser = markdownIt();
+    this.markdownParser = markdownIt({
+      html: true,
+      linkify: true,
+      typographer: true,
+    });
   }
   getRepos(username) {
     return this.http.get(`https://api.github.com/users/${username}/repos`);

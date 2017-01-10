@@ -5,7 +5,9 @@ import RepoController from './ctrl.repo';
 import RepoService from './service.repos';
 import routes from './routes.repos';
 
-export default angular.module('app.repos', [])
+import './repos.scss';
+
+export default angular.module('app.repos', ['toastr'])
   .config(routes)
   .controller('homeController', HomeController)
   .controller('reposController', ReposController)

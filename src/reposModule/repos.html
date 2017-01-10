@@ -1,7 +1,11 @@
-<p>{{repos.username}}'s Repositories</p>
+<div class="repos-wrapper">
+  <h1 class="header">{{repos.username}}'s Repositories({{repos.repos.length}})</h1>
 
-<ol>
-  <li ng-repeat="repo in repos.repos track by repo.id">
-    <a ui-sref="repoPage({username:'{{repos.username}}',reponame:'{{repo.name}}'})">{{repo.name}}</a>
-  </li>
-</ol>
+  <ul class="repo-list">
+    <li ng-repeat="repo in repos.repos track by repo.id" class="list-item">
+      <a ui-sref="repoPage({username:'{{repos.username}}',reponame:'{{repo.name}}'})">{{repo.name}}</a>
+      <i class="fa fa-code-fork"></i> {{repo.forks_count}}
+      <i class="fa fa-star"></i> {{repo.stargazers_count}}
+    </li>
+  </ul>
+</div>
